@@ -41,5 +41,13 @@ class Fraccion
     def -(other)
         Fraccion.new(@numer*other.denom - other.numer*@denom, @denom*other.denom)
     end
+
+    def /(other)
+        Fraccion.new(@numer*other.denom, @denom*other.numer)
+    end
+
+    def *(other)
+        Fraccion.new(@numer*other.numer, @denom*other.denom)
+    end
 end
 
