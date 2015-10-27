@@ -17,5 +17,13 @@ class Fraccion
     def to_s
         @numer.to_s + "/" + @denom.to_s
     end
+
+    def +(other)
+        Fraccion.new(@numer*other.denom + other.numer*@denom, @denom*other.denom)
+    end
+
+    def -(other)
+        Fraccion.new(@numer*other.denom - other.numer*@denom, @denom*other.denom)
+    end
 end
 
