@@ -14,6 +14,14 @@ class TestFraccion < Test::Unit::TestCase
         # assert_raise_with_name(ZeroDivisionError,"",Fraccion.new(4,0))
     end
 
+    def test_comparation
+        assert_equal(true, Fraccion.new(10,10) == Fraccion.new(10,10))
+        assert_equal(true, Fraccion.new(10,10) == Fraccion.new(1,1))
+        assert_equal(true, Fraccion.new(1,2) != Fraccion.new(1,1))
+        assert_equal(true, @frac2by3 < @frac1by2)
+        assert_equal(true, Fraccion.new(5,1) > @frac1by2)
+    end
+
     def test_operators_sum
         assert_equal("7/6",(@frac1by2+@frac2by3).to_s)
         assert_equal("7/6",(@frac2by3+@frac1by2).to_s)

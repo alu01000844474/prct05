@@ -18,6 +18,22 @@ class Fraccion
         @numer.to_s + "/" + @denom.to_s
     end
 
+    def ==(other)
+        @numer == other.numer && @denom == other.denom
+    end
+
+    def !=(other)
+        !(self == other)
+    end
+
+    def >(other)
+        @numer/@denom > other.numer/other.denom
+    end
+
+    def <(other)
+        @numer/@denom < other.numer/other.denom
+    end
+
     def +(other)
         Fraccion.new(@numer*other.denom + other.numer*@denom, @denom*other.denom)
     end
