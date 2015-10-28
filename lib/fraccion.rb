@@ -8,7 +8,7 @@ class Fraccion
     end
 
     def initialize(numer, denom)
-        raise ZeroDivisionError, " denominator is cero " if denom.eql? 0
+        raise RuntimeError, " denominator is cero " if denom.eql? 0
         d = gcd(numer, denom)
         @numer = numer / d
         @denom = denom / d
